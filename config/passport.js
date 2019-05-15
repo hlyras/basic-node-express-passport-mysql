@@ -1,13 +1,7 @@
 var passport = require('passport');
-var dbconfig = require('./database');
 var LocalStrategy = require('passport-local').Strategy;
-
-var mysql = require('mysql');
 var bcrypt = require('bcrypt-nodejs');
-var dbconfig = require('./database');
-var connection = mysql.createConnection(dbconfig.connection);
-
-connection.query('USE ' + dbconfig.database);
+var connection = require('./connection');
 
 passport.serializeUser(function(user, done) {
     done(null, user.id);
