@@ -14,7 +14,7 @@
         <div class="jumbotron text-center">
             <h1><span class="fa fa-lock"></span> Node Authentication</h1>
             <a href="/user" class="btn btn-default"><span class="fa fa-user"></span>Profile</a>
-            <a href="/user/logout" class="btn btn-default btn-sm">Logout</a>
+            <a class="btn btn-default btn-sm" onclick="if(confirm('Deseja sair?')){window.location.href='/user/logout'}">Logout</a>
         </div>
             <h1>Welcome <%= user.username %></h1>
     </div>
