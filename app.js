@@ -28,9 +28,9 @@ app.use(session({
     secret: 'vidyapathaisalwaysrunning',
     resave: true,
     saveUninitialized: true
-})); // session secret
+}));
 app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
+app.use(passport.session());
 app.use(flash());
 
 app.use('/', routes);

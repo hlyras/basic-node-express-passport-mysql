@@ -18,7 +18,7 @@ passport.use(
     new LocalStrategy({
         usernameField : 'username',
         passwordField : 'password',
-        passReqToCallback : true // allows us to pass back the entire request to the callback
+        passReqToCallback : true
     },
     function(req, username, password, done) {
         connection.query("SELECT * FROM users WHERE username = '"+username+"'", function(err, rows) {
