@@ -1,24 +1,18 @@
-// /**
-//  * Created by barrett on 8/28/14.
-//  */
+// copy and paste to create database and tables
 
-// var mysql = require('mysql');
-// var dbconfig = require('../config/database');
+// database 
+CREATE DATABASE lfsdb;
 
-// var connection = mysql.createConnection(dbconfig.connection);
-
-// connection.query('CREATE DATABASE ' + dbconfig.database);
-
-// connection.query('\
-// CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.users_table + '` ( \
-//     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
-//     `username` VARCHAR(20) NOT NULL, \
-//     `password` CHAR(60) NOT NULL, \
-//         PRIMARY KEY (`id`), \
-//     UNIQUE INDEX `id_UNIQUE` (`id` ASC), \
-//     UNIQUE INDEX `username_UNIQUE` (`username` ASC) \
-// )');
-
-// console.log('Success: Database Created!')
-
-// connection.end();
+// users
+CREATE TABLE `lfsdb`.`users` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `age` INT(3) NOT NULL,
+  `username` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(60) NOT NULL,
+  `acess` VARCHAR(2) NOT NULL default 'a1',
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC),
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC));

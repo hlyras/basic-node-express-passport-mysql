@@ -1,0 +1,72 @@
+<html>
+	<head>
+        <% include ../partials/head %>
+	</head>
+	<body>
+		<div class="main">
+			<header>
+				<a href="/"><img src="/images/favicon.png" style='width:45px;height:30px;'></a>
+				<div>
+					<a href="/login">Login</a>
+				</div>
+			</header>
+			<nav>
+			</nav>
+			<section>
+				<div class="container">
+					<div class="box2">
+						<form action="/user/signup" method="post">
+							<br>
+							<h4>Cadastre-se ou faça seu <a href="/login">login</a></h4>
+							<br>
+                            <% if (message.length > 0) { %>
+                                <div class="alert-msg"><%= message %></div>
+                            <% } %>
+							<br> Nome Completo <br>
+							<input type="text" name="name" maxlength="45" autocomplete="off">
+							<br><br> E-mail <br>
+							<input type="text" name="email" onblur="validateEmail()" maxlength="45" autocomplete="off">
+							<br><br> Username <br>
+							<input type="text" name="username" maxlength="45" autocomplete="off">
+							<br><br> Idade <br>
+							<input type="number" name="age" maxlength="2" autocomplete="off" value='0'>
+							<br><br> Senha <br>
+							<input type="password" name="password" maxlength="45" autocomplete="off">
+							<br><br> Confirmar senha <br>
+							<input type="password" name="confirmPassword" maxlength="45" autocomplete="off">
+							<br><br>
+							<button type="submit">Signup</button>
+							<br><br><br>
+						</form>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- <button onclick="window.location.href='/users'">Usuários</button> -->
+	</body>
+	<footer>
+        <% include ../partials/footer %>
+	</footer>
+	<script>
+		function validateEmail() {
+			let field = document.getElementById('email').value;
+			userAdress = field.substring(0, field.indexOf("@"));
+			domain = field.substring(field.indexOf("@")+ 1, field.length);
+			 
+			if ((userAdress.length >=1) &&
+			    (domain.length >=3) && 
+			    (userAdress.search("@")==-1) && 
+			    (domain.search("@")==-1) &&
+			    (userAdress.search(" ")==-1) && 
+			    (domain.search(" ")==-1) &&
+			    (domain.search(".")!=-1) &&      
+			    (domain.indexOf(".") >=1)&& 
+			    (domain.lastIndexOf(".") < domain.length - 1)) {
+			}
+			else{
+				alert("E-mail inválido");
+				document.getElementById('email').value = '';
+			}
+		}
+	</script>
+</html>

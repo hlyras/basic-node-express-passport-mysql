@@ -1,0 +1,70 @@
+<html>
+	<head>
+        <% include ../partials/head %>
+	</head>
+	<body>
+		<header>
+			<a href="/"><img src="/images/favicon.png" style='width:45px;height:30px;'></a>
+			<div>
+    			<a onclick="let r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">Logout</a>
+			</div>
+		</header>
+
+		<section>
+			<div class="container">
+				<div class="box2">
+					<table border='1'>
+						<tr>
+							<td>Nome</td>
+							<td>E-mail</td>
+							<td>Idade</td>
+							<td>Acesso</td>
+						</tr>
+						<tr>
+							<td><%= user.name%></td>
+							<td><%= user.email%></td>
+							<td><%= user.age%></td>
+							<td><%= user.acess%></td>
+						</tr>
+					</table>
+				</div>
+				<div class="box1">
+					<table border='1'>
+						<tr>
+							<td>Nome</td>
+							<td>E-mail</td>
+							<td>Idade</td>
+							<td>Acesso</td>
+						</tr>
+						<tr>
+							<td><%= user.name%></td>
+							<td><%= user.email%></td>
+							<td><%= user.age%></td>
+							<td><%= user.acess%></td>
+						</tr>
+					</table>
+				</div>
+				<div class="box1">
+					<table border='1'>
+						<tr>
+							<td>Nome</td>
+							<td>E-mail</td>
+							<td>Idade</td>
+							<td>Acesso</td>
+						</tr>
+						<tr>
+							<td><%= user.name%></td>
+							<td><%= user.email%></td>
+							<td><%= user.age%></td>
+							<td><%= user.acess%></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</section>
+	</body>
+	
+	<footer>
+        <% include ../partials/footer %>
+	</footer>
+</html>

@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <% include ../partials/head %>
+    </head>
+    <body>
+        <div class="main">
+            <header>
+                <a href="/"><img src="/images/favicon.png" style='width:45px;height:30px;'></a>
+                <div>
+                    <a href="/signup">Signup</a>
+                </div>
+            </header>
+            <nav>
+            </nav>
+            <section>
+                <div class="container">
+                    <div class="box2">
+                        <form action="/user/login" method="post">
+                            <br>
+                            <h4>Faça seu login ou <a href="/signup">Cadastre-se</a></h4>
+                            <br>
+                            <% if (message.length > 0) { %>
+                                <div class="alert-msg"><%= message %></div>
+                            <% } %>
+                            <br><br>Username<br>
+                            <input type="text" name="username" autocomplete="off">
+                            <br><br> Senha <br>
+                            <input type="password" name="password" autocomplete="off">
+                            <br><br>
+                            <button type="submit">Login</button>
+                            <br><br><br>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+    
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+</html>

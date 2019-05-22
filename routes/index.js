@@ -1,13 +1,12 @@
 var express = require('express');
 var router = express.Router();
+const homeController = require('../app/controller/home');
 
 /* GET home page. */
-router.get('/', function(req, res) {
-	if(req.user){
-		return res.render('home', { user: req.user });
-	};
-	res.render('index');
-});
+router.get('/', homeController.index);
+router.get('/login', homeController.login);
+router.get('/signup', homeController.signup);
+router.get('/logout', homeController.logout);
 
 router.use('/user', require('./user'));
 

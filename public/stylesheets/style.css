@@ -1,8 +1,153 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+header {
+	background-color: black;
+	width: 100%;
+	height: auto;
+	font: 100% Arial;
+	color: white;
+	padding: 10px;
+	display: flex;
+	box-sizing: border-box;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+header a {
+	color: white;
+	font-weight: bold;
 }
 
 a {
-  color: #00B7FF;
+	text-decoration: none;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+section {
+	width: 98%;
+	min-height: 400px;
+	height: auto;
+	float: left;
+	text-align: center;
+	margin-left: 1%;
+	margin-bottom: 1%;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+section .container {
+	display: flex;
+	padding: 10px;
+	text-align: center;
+	box-sizing: border-box;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+section .container a {
+	color: black;
+	text-decoration: underline;
+}
+
+.box1 {
+	margin: auto;
+	text-align: center;
+	width: 45%;
+	padding: 10px;
+	box-sizing: border-box;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.box2 {
+	margin: auto;
+	text-align: center;
+	width: 95%;
+	padding: 10px;
+	box-sizing: border-box;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.alert-msg {
+	background-color:#f99;
+	height: auto;
+	width:300px;
+	padding: 5px;
+	margin:auto;
+	border-radius:3px;
+	box-sizing: border-box;
+}
+
+table {
+	margin: auto;
+}
+
+table tr td {
+	text-align: center;
+	padding: 1px;
+	font-size: 12px;
+	word-break: break-all;
+}
+
+textarea {
+	width: 90%;
+	height: 300px;
+	resize: none;
+}
+
+footer {
+	clear: both;
+	background-color: black;
+	width: 100%;
+	height: auto;
+	font-size: 0.8em;
+}
+
+footer .cells {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+footer .cell {
+	text-align: center;
+	width: 32%;
+	height: auto;
+	padding: 10px;
+	margin: 1%;
+	margin-bottom: 10px;
+	color: white;
+}
+
+footer .cell a {
+	color: white;
+}
+
+footer .copyright {
+	text-align: center;
+	width: 100%;
+	height: 40px;
+	color: white;
+}
+
+@media (max-width: 380px) {
+ /* adicionar aqui os novos estilos para mobile */
+
+	header {
+		font-size: 1.3rem;
+	}
+
+	.box1 {
+		margin: auto;
+		text-align: center;
+		width: 95%;
+		padding: 10px;
+		box-sizing: border-box;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	footer {
+		font-size: 0.68rem;
+	}
 }
