@@ -6,6 +6,16 @@ const userController = {
 		if (req.isAuthenticated()){ return next() };
 		res.redirect('/user/login');
 	},
+	verifyAcess: async (req, res, acess) => {
+		if(req.isAuthenticated()){
+			for(let i in acess){
+				if(acess[i]==req.user.acess){
+					return true;
+				};
+			};
+		};
+		return false;
+	},
 	login: (req, res) => {
 		req.session.cookie.maxAge = 1000 * 60 * 5;
 		res.redirect('/');
